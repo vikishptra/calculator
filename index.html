@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <title>Vicky Sahputra</title>
+  </head>
+  <body>
+    <div class="calc-container code code--small code--right" data-aos="fade-down" id="button">
+      <header class="calc-header">
+        <h1 class="h1-class">Calculator Basic</h1>
+        <div class="theme">
+          <div class="switcher">
+            <div class="switch"></div>
+          </div>
+        </div>
+      </header>
+      <!-- screen -->
+      <div class="screen code code--small code--right" data-aos="fade-up-left">
+        <p id="preview"></p>
+        <p id="display">0</p>
+      </div>
+      <!-- keypad -->
+      <div class="keypad code code--small code--left" data-aos="fade-up">
+        <button class="key number" data-key="7">7</button>
+        <button class="key number" data-key="8">8</button>
+        <button class="key number" data-key="9">9</button>
+        <button class="key delete" data-key="delete">Del</button>
+        <button class="key number" data-key="4">4</button>
+        <button class="key number" data-key="5">5</button>
+        <button class="key number" data-key="6">6</button>
+        <button class="key operator" data-key="addition" data-symbol="+">
+          +
+        </button>
+        <button class="key number" data-key="1">1</button>
+        <button class="key number" data-key="2">2</button>
+        <button class="key number" data-key="3">3</button>
+        <button class="key operator" data-key="subtraction" data-symbol="-">
+          -
+        </button>
+        <button class="key decimal" data-key="decimal">.</button>
+        <button class="key number" data-key="0">0</button>
+        <button class="key operator" data-key="division" data-symbol="∕">
+          ∕
+        </button>
+        <button class="key operator" data-key="multiplication" data-symbol="×">
+          ×
+        </button>
+        <button class="key reset span-2" data-key="reset">Reset</button>
+        <button class="key equal span-2" data-key="equal">=</button>
+      </div>
+      <div class="keypad2">
+        <button class="key ha reset span-2" onclick="reset1()">Biru</button> 
+        <button class="key ho reset span-2" onclick="reset2()">Merah</button> 
+        <button class="key hi reset span-2" onclick="reset3()">Hijau</button> 
+      </div>
+    </div>
+
+    <script src="/assets/js/script.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-out-back',
+            duration: 2000
+        });
+    </script>
+
+    <script>
+        hljs.initHighlightingOnLoad();
+
+        $('.hero__scroll').on('click', function(e) {
+            $('html, body').animate({
+                scrollTop: $(window).height()
+            }, 2000);
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Spartan", sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    font-size: 1.6rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .calc-container {
+    width: min(100%, 365px);
+    padding: 25px 15px;
+    margin: 0 auto;
+    box-shadow:  2px 2px 2px 5px black;
+  }
+  
+  .calc-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  
+  .calc-header h1 {
+    color: black;
+    font-size: 2.4rem;
+    margin: auto;
+  }
+  
+  .theme {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .theme-text {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-right: 15px;
+  }
+  
+  .theme input {
+    display: none;
+  }
+  
+  .theme-switcher {
+    display: flex;
+    justify-content: space-between;
+    width: 6rem;
+    height: 3.4rem;
+    position: relative;
+  }
+  
+  .theme-switcher label {
+    flex: none;
+    width: 33.3%;
+    height: 100%;
+    background-color: transparent;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .theme-switcher .indicator {
+    display: none;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 3px;
+    z-index: 2;
+  }
+  
+  .theme-switcher input:checked + .indicator {
+    display: inline-block;
+  }
+  
+  .theme .switch-slider {
+    width: 100%;
+    height: 1.8rem;
+    background: black;
+    border-radius: 10rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 97%;
+    margin: 0 auto;
+  }
+  
+  .screen {
+    margin-top: 20px;
+    background: #fff;
+    padding: 10px 15px;
+    text-align: right;
+    color: #fff;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-shadow: 2px  black;
+    min-height: 7rem;
+    box-shadow: 2px 2px 7px black;
+    border: 2px solid black;
+    /* mencegah tampilan angka supaya tidak overflow */
+    overflow-x: scroll;
+  }
+  
+  .screen::-webkit-scrollbar {
+    appearance: none;
+    height: 3px;
+  }
+  
+  .screen::-webkit-scrollbar-thumb {
+    background: hsl(0, 5%, 81%);
+    border-radius: 25px;
+  }
+  
+  .screen #preview {
+    font-size: 1.2rem;
+    color: black;
+  }
+  
+  .screen #display {
+    font-size: 2.7rem;
+    color: black;
+    width: 100%;
+    white-space: nowrap;
+  }
+  
+  /* keypad */
+  .keypad {
+    margin-top: 2rem;
+    padding: 2rem;
+    background:#533535;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.8rem;
+    border-radius: 7px;
+    box-shadow: 2px 2px 7px black;
+    border: 4px solid black;
+  }
+  
+  .keypad .key {
+    min-height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: cornflowerblue;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-transform: uppercase;
+    box-shadow: 3px 2px 5px black ;
+  }
+  .keypad2 .key {
+    min-height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.6rem;
+    line-height: 1;
+    text-transform: uppercase;
+    box-shadow: 3px 2px 5px black ;
+    width: 95px;
+    margin-top: 20px;
+    float: left;
+    margin-right: 10px;
+    box-shadow: 2px 2px 7px black;
+    border: 4px solid black;
+  }
+  .keypad2{
+      padding-left: 11px;
+  }
+  .keypad2 .ha{
+      background-color: #99FEFF;
+  }
+  .keypad2 .ho{
+      background-color:#FF6D6D;
+  }
+  .keypad2 .hi{
+      background-color: #2FDD92;
+  }
+  .keypad :is(.delete, .reset) {
+    background:cornflowerblue;
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: inset 0 -2px 0 hsl(225, 21%, 49%);
+  }
+  
+  .keypad .equal {
+    background: hsl(6, 63%, 50%);
+    color: var(--text-color-1);
+    box-shadow: inset 0 -2px 0 black;
+  }
+  
+  .keypad .key:hover {
+    filter: brightness(130%);
+  }
+  
+  .keypad .span-2 {
+    grid-column: span 2;
+  }
